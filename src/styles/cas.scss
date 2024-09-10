@@ -1,0 +1,147 @@
+// welcom Page main Color
+
+$primary-color: #f0f0f0;
+$secondary-color: #d3d3d3;
+
+.bg-gradient {
+	background-image: linear-gradient(
+		to right,
+		$primary-color,
+		$secondary-color
+	) !important;
+}
+
+// styles.scss
+$circle-color: rgba(52, 152, 219, 0.3); 
+
+.background-container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(
+		to right,
+		#f0f0f0,
+		#d3d3d3
+	); 
+	overflow: hidden; 
+	z-index: -1;
+}
+
+// Mixin for circle
+@mixin circle($size, $top, $left, $color) {
+	position: absolute;
+	border-radius: 50%;
+	background-color: $color;
+	width: $size;
+	height: $size;
+	top: $top;
+	left: $left;
+}
+
+// Add multiple circles
+.circle1 {
+	@include circle(300px, 50px, 100px, $circle-color);
+}
+
+.circle2 {
+	@include circle(200px, 200px, 150px, $circle-color);
+}
+
+.circle3 {
+	@include circle(250px, 100px, 200px, $circle-color);
+}
+
+.circle4 {
+	@include circle(150px, 200px, 100px, $circle-color);
+}
+
+.circle5 {
+	@include circle(100px, 50px, 50px, $circle-color);
+}
+
+.circle6 {
+	@include circle(200px, 12%, -50%, $circle-color);
+}
+.content {
+	position: relative;
+	z-index: 1;
+}
+.min-h-50{
+	min-height : 50dvh;
+}
+.min-h-75{
+	min-height: 75dvh;
+}
+
+.img{
+	background: url('../media/saveEarth3.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: brightness(80%);
+}
+
+
+// Define color variables
+$blue: #3498db;
+$green: #2ecc71;
+$black: #000;
+$white: #fff;
+
+// Mixin for creating circles
+@mixin circleP($size, $color) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+  border-radius: 50%;
+}
+
+// Mixin for creating squares
+@mixin square($size, $color) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+}
+
+// Shape container
+.shape-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  
+  .circle-blue {
+    @include circleP(100px, $blue);
+   
+  }
+  
+  .circle-green {
+    @include circleP(150px, $green);
+  }
+  
+  .square-black {
+    @include square(100px, $black);
+  }
+  
+  .square-white {
+    @include square(120px, $white);
+    border: 2px solid $black; // Adding a border for visibility
+  }
+}
+
+
+.bg-smooth {
+	// background-color: $blue  !important;
+	color: #eee;
+	background-image: linear-gradient(to right , $green , $blue) !important;
+}
+
+.min-w-50{
+	width : 50%;
+}
+.min-w-25{
+	width : 25%;
+}
+.min-w-75{
+	width : 75%;
+}
